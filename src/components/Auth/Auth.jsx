@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {useForm} from 'react-hook-form'
 
-
 function ExitAuth({regData, setRegData}) {
 
     const exitClick = () => {
@@ -22,24 +21,9 @@ const Auth = () => {
 
     // сделал тестовую бд пользователей
     const users = [
-        {
-            role: "admin",
-            name: "Рома",
-            login: "roma",
-            password: "111"
-        },
-        {
-            role: "admin",
-            name: "Дима",
-            login: "dima",
-            password: "222"
-        },
-        {
-            role: "user",
-            name: "Гость",
-            login: "test",
-            password: "333"
-        }
+        {role: "admin", name: "Рома", login: "roma", password: "111"},
+        {role: "admin", name: "Дима", login: "dima", password: "222"},
+        {role: "user", name: "Гость", login: "test", password: "333"}
     ]
 
     const onSubmit = data => {
@@ -49,7 +33,6 @@ const Auth = () => {
             }
         })
     };
-
     return (
         <>
             {
@@ -71,5 +54,4 @@ const Auth = () => {
         </>
     )
 }
-
 export default Auth
