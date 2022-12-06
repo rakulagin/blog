@@ -1,11 +1,24 @@
 import React, {useState} from 'react'
 import {useForm} from 'react-hook-form'
 
-const Auth = () => {
-    const { register, handleSubmit } = useForm();
 
-    const [regData, setRegData] = useState({})
-     const [role, setRole] = useState(null)
+function ExitAuth({regData, setRegData}) {
+
+    const exitClick = () => {
+        setRegData(null)
+    }
+    return (
+        <div>
+            <p> Привет, {regData.name}, ты {regData.role}</p>
+            <button onClick={exitClick}>Выйти</button>
+        </div>
+    )
+}
+
+const Auth = () => {
+    const {register, handleSubmit} = useForm();
+
+    const [regData, setRegData] = useState(null)
 
     // сделал тестовую бд пользователей
     const users = [
@@ -30,18 +43,32 @@ const Auth = () => {
     ]
 
     const onSubmit = data => {
-        setRegData(data)
+        users.forEach(el => {
+            if (data.login === el.login && data.password === el.password) {
+                setRegData(el)
+            }
+        })
     };
 
-    console.log("regData:", regData)
-
     return (
-        // это реакт хук форм
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("login" , {required: true})} placeholder='login' />
-            <input {...register("password" , {required: true})} placeholder='password' />
-            <input type="submit" />
-        </form>
+        <>
+            {
+                regData ? (
+                    <ExitAuth regData={regData}
+                              setRegData={setRegData}
+                    />
+                ) : (
+                    <>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input {...register("login", {required: true})} placeholder='login'/>
+                            <input {...register("password", {required: true})} placeholder='password'/>
+                            <button type="submit">Отправить</button>
+                        </form>
+                        {regData ? <p> Привет, {regData.name}</p> : <p>вы не авторизованы</p>}
+                    </>
+                )
+            }
+        </>
     )
 }
 

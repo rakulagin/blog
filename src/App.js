@@ -7,8 +7,8 @@ function App() {
     <div className="App">
       <header>
           <Auth/>
-          <Form />
-          <MessageList />
+          {/*<Form />*/}
+          {/*<MessageList />*/}
       </header>
     </div>
   );
