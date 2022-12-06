@@ -1,12 +1,12 @@
 import Form from "./components/Form";
 import MessageList from "./components/MessageList";
+import Auth from './components/Auth/Auth'
 
 function App() {
   return (
     <div className="App">
       <header>
-
-          Learn React !!!
+          <Auth/>
           <Form />
           <MessageList />
       </header>
