@@ -1,3 +1,5 @@
+import Form from "./components/Form";
+import MessageList from "./components/MessageList";
 
 
 function App() {
@@ -6,7 +8,8 @@ function App() {
       <header className="App-header">
 
           Learn React !!!
-
+          <Form />
+          <MessageList />
       </header>
     </div>
   );
