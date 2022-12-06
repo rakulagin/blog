@@ -1,11 +1,10 @@
 import Form from "./components/Form";
 import MessageList from "./components/MessageList";
 
-
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
 
           Learn React !!!
           <Form />
