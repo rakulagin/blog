@@ -10,16 +10,16 @@ const db = getFirestore(app) // база данных
 const auth = getAuth();
 
 // вход по логину
-export const signInFB = async ({ email, password }) => {
+export const signInFB = async ({ login, password }) => {
          
-        email = 'guest'
+        login = 'guest'
         password = '222222'
-    /*    email = 'dima'
+    /*    login = 'dima'
         password = '222222'
-        email = 'roma'
+        login = 'roma'
         password = '111111'
      */
-    signInWithEmailAndPassword(auth, email + '@blog.com', password)
+    signInWithEmailAndPassword(auth, login + '@blog.com', password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
@@ -32,10 +32,10 @@ export const signInFB = async ({ email, password }) => {
         });
 }
 // регистрация пользователя
-export const createAuthFB = async ({ email, password }) => {
-    email = 'guest'
+export const createAuthFB = async ({ login, password }) => {
+    login = 'guest'
     password = '222222'
-    createUserWithEmailAndPassword(auth, email + '@blog.com', password)
+    createUserWithEmailAndPassword(auth, login + '@blog.com', password)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
@@ -49,7 +49,7 @@ export const createAuthFB = async ({ email, password }) => {
 export const checkRole = async (uid) => {
     try {
         const docSnap = await getDoc(doc(db, "roles", uid));
-        docSnap.exists() ? console.log(docSnap.get('role')) : console.log('guest');
+        docSnap.exists() ? console.log(docSnap.get('role')) : console.log('guest');;
         
     } catch (error) {
         console.log(error);
