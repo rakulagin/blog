@@ -12,8 +12,8 @@ const auth = getAuth();
 // вход по логину
 export const signInFB = async ({ login, password }) => {
          
-        login = 'guest'
-        password = '222222'
+/*         login = 'guest'
+        password = '222222' */
     /*    login = 'dima'
         password = '222222'
         login = 'roma'
@@ -33,8 +33,8 @@ export const signInFB = async ({ login, password }) => {
 }
 // регистрация пользователя
 export const createAuthFB = async ({ login, password }) => {
-    login = 'guest'
-    password = '222222'
+/*     login = 'guest'
+    password = '222222' */
     createUserWithEmailAndPassword(auth, login + '@blog.com', password)
         .then((userCredential) => {
             const user = userCredential.user;
