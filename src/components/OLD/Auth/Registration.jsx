@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useForm} from 'react-hook-form'
-import {createAuthFB} from "../../firebase/fireauth";
+import {createAuthFB} from "../../../firebase/fireauth";
 
 const Registration = () => {
     const {register, handleSubmit} = useForm();

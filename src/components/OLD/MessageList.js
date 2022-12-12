@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {readMessages} from '../firebase/firestore'
+import {readMessages} from '../../firebase/firestore'
 import './form.css'
 
 const MessageList = () => {

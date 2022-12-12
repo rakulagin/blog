@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { addMessage } from '../firebase/firestore'
+import { addMessage } from '../../firebase/firestore'
 import './form.css'
 
 const Form = () => {
