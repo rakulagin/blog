@@ -9,7 +9,7 @@ const LoginForm = () => {
     const [accountExist, setAccountExist] = useState(true)
 
     return (
-        <div className={styles.loginWrp}>
+        <>
             {accountExist ?
                 <Login
                     setState={setAccountExist}
@@ -17,7 +17,7 @@ const LoginForm = () => {
                 :
                 <Auth setState={setAccountExist}/>
             }
-        </div>
+        </>
     )
 }
 

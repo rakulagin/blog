@@ -10,10 +10,6 @@ const Login = ({setState}) => {
         console.log(data)
     }
 
-    const test = () => {
-        setState(false)
-    }
-
     return (
         <div className={styles.loginWrp}>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -22,8 +18,8 @@ const Login = ({setState}) => {
                 <input className={styles.loginInput} {...register("password", {required: true})} placeholder='Password'/>
                 <button className={styles.loginButton} type="submit">Войти</button>
             </form>
-            <button className={styles.loginButton}
-                    onClick={test}
+            <button className={styles.changeBTN}
+                    onClick={() => setState(false)}
             >Создать аккаунт</button>
         </div>
     )

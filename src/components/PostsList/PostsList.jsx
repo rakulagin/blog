@@ -8,7 +8,6 @@ const PostsList = () => {
 
     return (
         <div className={styles.list}>
-            постс лист
             <Post/>
             <Post/>
             <Post/>
