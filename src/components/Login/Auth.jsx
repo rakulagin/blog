@@ -3,7 +3,7 @@ import {useForm} from 'react-hook-form'
 
 import styles from './Login.module.scss'
 
-const Auth = () => {
+const Auth = ({setState}) => {
     const {register, handleSubmit} = useForm();
 
     const onSubmit = data => {
@@ -18,7 +18,7 @@ const Auth = () => {
                 <input className={styles.loginInput} {...register("password", {required: true})} placeholder='Password'/>
                 <button className={styles.loginButton} type="submit">Создать Аккаунт</button>
             </form>
-            <button className={styles.loginButton}>Уже есть аккаунт</button>
+            <button className={styles.loginButton} onClick={() => setState(true)}>Уже есть аккаунт</button>
         </div>
     )
 }
